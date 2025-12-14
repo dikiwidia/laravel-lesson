@@ -1,0 +1,220 @@
+{
+    "Unilam Text Field": {
+        "prefix": "utext",
+        "body": [
+            "$$header = [",
+            "\t'title' => \"$2\",",
+            "\t'name' => \"$1\",",
+            "\t'class' => \"field-full md:field-1/2 text-sm\",",
+            "\t'required' => true,",
+            "\t'type' => \"text\",",
+            "\t'placeholder' => \"Masukkan $2\",",
+            "\t'uppercase' => true,",
+            "\t'readOnly' => false,",
+            "\t'value' => $$data['$1'] ?? '',",
+            "];",
+            "$$headers['$1'] = $$header;"
+        ],
+        "description": "Create text field"
+    },
+
+    "Unilam Email Field": {
+        "prefix": "uemail",
+        "body": [
+            "$$header = [",
+            "\t'title' => \"$2\",",
+            "\t'name' => \"$1\",",
+            "\t'class' => \"field-full md:field-1/2 text-sm\",",
+            "\t'required' => true,",
+            "\t'type' => \"email\",",
+            "\t'placeholder' => \"Masukkan $2\",",
+            "\t'uppercase' => true,",
+            "\t'readOnly' => false,",
+            "\t'value' => $$data['$1'] ?? '',",
+            "];",
+            "$$headers['$1'] = $$header;"
+        ],
+        "description": "Create email field"
+    },
+
+    "Unilam Currency Field": {
+        "prefix": "ucurrency",
+        "body": [
+            "$$header = [",
+            "\t'title' => \"$2\",",
+            "\t'name' => \"$1\",",
+            "\t'class' => \"field-full md:field-1/2 text-sm\",",
+            "\t'required' => true,",
+            "\t'type' => \"currency\",",
+            "\t'placeholder' => \"Masukkan $2\",",
+            "\t'readOnly' => false,",
+            "\t'value' => $$data['$1'] ?? 0,",
+            "];",
+            "$$headers['$1'] = $$header;"
+        ],
+        "description": "Create currency field"
+    },
+
+    "Unilam Number Field": {
+        "prefix": "unumber",
+        "body": [
+            "$$header = [",
+            "\t'title' => \"$2\",",
+            "\t'name' => \"$1\",",
+            "\t'class' => \"field-full md:field-1/2 text-sm\",",
+            "\t'required' => true,",
+            "\t'type' => \"number\",",
+            "\t'placeholder' => \"Masukkan $2\",",
+            "\t'readOnly' => false,",
+            "\t'value' => $$data['$1'] ?? 0,",
+            "];",
+            "$$headers['$1'] = $$header;"
+        ],
+        "description": "Create number field"
+    },
+
+    "Unilam Date Field": {
+        "prefix": "udate",
+        "body": [
+            "$$header = [",
+            "\t'title' => \"$2\",",
+            "\t'name' => \"$1\",",
+            "\t'class' => \"field-full md:field-1/2 text-sm\",",
+            "\t'required' => true,",
+            "\t'type' => \"date\",",
+            "\t'placeholder' => \"Masukkan $2\",",
+            "\t'uppercase' => false,",
+            "\t'readOnly' => false,",
+            "\t'value' => $$data['$1'] ?? '',",
+            "];",
+            "$$headers['$1'] = $$header;"
+        ],
+        "description": "Create date field"
+    },
+
+    "Unilam Text Area Field": {
+        "prefix": "utextarea",
+        "body": [
+            "$$header = [",
+            "\t'title' => \"$2\",",
+            "\t'name' => \"$1\",",
+            "\t'class' => \"field-full md:field-1/2 text-sm\",",
+            "\t'required' => true,",
+            "\t'type' => \"text-area\",",
+            "\t'placeholder' => \"Masukkan $2\",",
+            "\t'uppercase' => true,",
+            "\t'readOnly' => false,",
+            "\t'value' => $$data['$1'] ?? '',",
+            "];",
+            "$$headers['$1'] = $$header;"
+        ],
+        "description": "Create text area field"
+    },
+
+    "Unilam Checkbox Field": {
+        "prefix": "ucheckbox",
+        "body": [
+            "$$header = [",
+            "\t'title' => \"$2\",",
+            "\t'name' => \"$1\",",
+            "\t'class' => \"field-full md:field-1/2 text-sm\",",
+            "\t'required' => false,",
+            "\t'type' => \"checkbox\",",
+            "\t'placeholder' => \"Pilih untuk mengaktifkan\",",
+            "\t'uppercase' => false,",
+            "\t'readOnly' => false,",
+            "\t'value' => $$data['$1'] ?? false,",
+            "];",
+            "$$headers['$1'] = $$header;"
+        ],
+        "description": "Create checkbox field"
+    },
+
+    "Unilam Select Field": {
+        "prefix": "uselect",
+        "body": [
+            "$$header = [",
+            "\t'title' => \"$2\",",
+            "\t'name' => \"$1\",",
+            "\t'class' => \"field-full md:field-1/2 text-sm\",",
+            "\t'required' => true,",
+            "\t'type' => \"select\",",
+            "\t'options' => [",
+            "\t\t['value' => \"$3\", 'label' => \"$3\"]",
+            "\t],",
+            "\t'placeholder' => \"Masukkan $2\",",
+            "\t'uppercase' => true,",
+            "\t'readOnly' => false,",
+            "\t'value' => $$data['$1'] ?? false,",
+            "];",
+            "$$headers['$1'] = $$header;"
+        ],
+        "description": "Create select field"
+    },
+
+    "Unilam Select Multiple Field": {
+        "prefix": "uselectmultiple",
+        "body": [
+            "$$header = [",
+            "\t'title' => \"$2\",",
+            "\t'name' => \"$1\",",
+            "\t'class' => \"field-full md:field-1/2 text-sm\",",
+            "\t'required' => true,",
+            "\t'type' => \"select-multiple\",",
+            "\t'options' => [",
+            "\t\t['value' => \"$3\", 'label' => \"$3\"]",
+            "\t],",
+            "\t'placeholder' => \"Masukkan $2\",",
+            "\t'uppercase' => true,",
+            "\t'readOnly' => false,",
+            "\t'value' => $$data['$1'] ?? false,",
+            "];",
+            "$$headers['$1'] = $$header;"
+        ],
+        "description": "Create select multiple field"
+    },
+
+    "Unilam Data Field": {
+        "prefix": "udata",
+        "body": [
+            "$$header = [",
+            "\t'title' => \"$2\",",
+            "\t'name' => \"$1\",",
+            "\t'class' => \"field-full md:field-1/2 text-sm\",",
+            "\t'required' => true,",
+            "\t'type' => \"data\",",
+            "\t'search_table' => \"$3\",",
+            "\t'search_field' => \"$4\",",
+            "\t'search_condition' => \"$5\",",
+            "\t'placeholder' => \"Masukkan $2\",",
+            "\t'uppercase' => true,",
+            "\t'readOnly' => false,",
+            "\t'value' => $$data['$1'] ?? false,",
+            "];",
+            "$$headers['$1'] = $$header;"
+        ],
+        "description": "Create data field"
+    },
+
+    "Unilam Data Multiple Field": {
+        "prefix": "udatamultiple",
+        "body": [
+            "$$header = [",
+            "\t'title' => \"$2\",",
+            "\t'name' => \"$1\",",
+            "\t'class' => \"field-full md:field-1/2 text-sm\",",
+            "\t'required' => true,",
+            "\t'type' => \"data-multiple\",",
+            "\t'search_table' => \"$3\",",
+            "\t'search_field' => \"$4\",",
+            "\t'search_condition' => \"$5\",",
+            "\t'placeholder' => \"Masukkan $2\",",
+            "\t'uppercase' => true,",
+            "\t'readOnly' => false,",
+            "\t'value' => $$data['$1'] ?? false,",
+            "];",
+            "$$headers['$1'] = $$header;"
+        ],
+        "description": "Create data multiple field"
+    }
+}

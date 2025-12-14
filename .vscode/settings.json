@@ -1,0 +1,15 @@
+{
+    "[php]": {
+        // "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+        "editor.defaultFormatter": "DEVSENSE.phptools-vscode",
+        "editor.formatOnSave": true
+    },
+    "[blade]": {
+        "editor.defaultFormatter": "shufo.vscode-blade-formatter",
+        "editor.formatOnSave": true
+    },
+    "window.zoomLevel": 0,
+    "editor.fontSize": 14,
+    "workbench.colorTheme": "Noctis Sereno",
+    "workbench.iconTheme": "vscode-icons"
+}
