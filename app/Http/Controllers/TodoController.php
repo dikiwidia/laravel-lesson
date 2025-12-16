@@ -37,13 +37,15 @@ class TodoController extends Controller
         $note = $request->input("note");
         $checked_flag = $request->input("checked_flag");
 
-        $data = [
+        // rumus yang harus diikutin
+        $inputan = [
             "date" => $date,
             "activity" => $activity,
             "checked_flag" => $checked_flag ?? false,
             "note" => $note
         ];
-        Todo::create($data);
+        // Model::create($inputan)
+        Todo::create($inputan);
         return redirect()->route("todo.main")->with("success", "Berhasil simpan data");
     }
 
