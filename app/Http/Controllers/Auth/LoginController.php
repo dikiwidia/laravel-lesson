@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Request;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -45,5 +45,18 @@ class LoginController extends Controller
     {
         // untuk mengubah halaman di views (folder halamanlogin, nama file nya login.blade.php)
         return view('halamanlogin.login');
+    }
+
+    protected function attemptLogin(Request $request)
+    {
+        return $this->guard()->attempt(
+            $this->credentials($request),
+            $request->boolean('remember')
+        );
+    }
+
+    protected function credentials(Request $request)
+    {
+        return $request->only($this->username(), 'password', 'is_admin_flag');
     }
 }

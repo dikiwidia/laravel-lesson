@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.main', ['title' => 'Todo Management'])
 
 @section('content')
     <div class="py-2 border border-cyan-100 my-2">

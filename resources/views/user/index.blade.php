@@ -1,10 +1,10 @@
-@extends('layouts.main', ['title' => 'Todo Management'])
+@extends('layouts.main', ['title' => 'User Management'])
 
 @section('content')
     @auth
         <div class="flex justify-end w-full">
             <a class="text-slate-50 bg-green-500 px-3 py-1.5 cursor-pointer hover:bg-green-600 rounded"
-                href="{{ route('todo.create') }}">Add Todo</a>
+                href="{{ route('user.create') }}">Add User</a>
         </div>
     @endauth
     <div class="py-2 border border-cyan-100 my-2">
@@ -12,10 +12,9 @@
             <thead class="bg-gray-50">
                 <tr>
                     <th>No</th>
-                    <th>Date</th>
-                    <th>Activity</th>
-                    <th>Is Active</th>
-                    <th>Note</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Is Admin</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -23,12 +22,11 @@
                 @forelse ($datas as $data)
                     <tr class="hover:bg-sky-50">
                         <td class="text-center px-2 py-1.5">{{ $data->id }}</td>
-                        <td class="px-2 py-1.5">{{ $data->date }}</td>
-                        <td class="px-2 py-1.5">{{ $data->activity }}</td>
+                        <td class="px-2 py-1.5">{{ $data->name }}</td>
+                        <td class="px-2 py-1.5">{{ $data->email }}</td>
                         <td class="text-center px-2 py-1.5"><input type="checkbox" class="w-4 h-4"
-                                {{ $data->checked_flag ? 'checked' : '' }} readonly disabled />
+                                {{ $data->is_admin_flag ? 'checked' : '' }} readonly disabled />
                         </td>
-                        <td class="px-2 py-1.5">{{ $data->note }}</td>
                         <td class="flex text-center px-2 py-1.5">
                             @php
                                 $is_authed = false;
@@ -39,8 +37,8 @@
                                 @endphp
                             @endauth
                             <a class="text-sm px-2 py-1 bg-sky-400 text-slate-100 hover:bg-sky-500 cursor-pointer rounded-s"
-                                href="{{ route('todo.show', ['id' => $data->id]) }}">Show</a>
-                            <form class="rounded-e" method="POST" action="{{ route('todo.delete', ['id' => $data->id]) }}">
+                                href="{{ route('user.show', ['id' => $data->id]) }}">Show</a>
+                            <form class="rounded-e" method="POST" action="{{ route('user.delete', ['id' => $data->id]) }}">
                                 @method('delete')
                                 @csrf
                                 <button
